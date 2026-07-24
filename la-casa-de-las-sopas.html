@@ -1,0 +1,1285 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Casa de las Sopas · Caldos y sopas caseras en San Miguel, Lima</title>
+  <meta name="description" content="Caldos y sopas caseras peruanas en San Miguel. Caldo de gallina, sopa criolla, chupe de camarones y más, servidos bien calientes. Av. de la Marina 1541.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="La Casa de las Sopas">
+  <meta property="og:description" content="El caldo de siempre, como en casa. San Miguel, Lima.">
+  <meta property="og:locale" content="es_PE">
+
+  <!-- Favicon: cuchara -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23123B57'/%3E%3Cpath d='M6 17c0-.8.5-1.3 1.3-1.3h17.4c.8 0 1.3.5 1.3 1.3 0 5-3.6 8.6-8.3 9.4V28h-3.4v-1.6C9.6 25.6 6 22 6 17Z' fill='%23E8A83A'/%3E%3C/svg%3E">
+
+  <!-- Fuentes: Fraunces (títulos) + Hanken Grotesk (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+/* =========================================================================
+   La Casa de las Sopas — hoja de estilos
+   Identidad: olla de peltre azul moteada + vapor + acentos de caldo/culantro
+   ========================================================================= */
+
+:root {
+  /* Color — derivado del plato de caldo peruano */
+  --enamel:      #123b57;   /* azul esmalte, superficie principal oscura */
+  --enamel-deep: #0c2a3e;   /* fondo más profundo */
+  --steam:       #f7f2e9;   /* blanco cálido / espuma, fondo claro */
+  --steam-2:     #efe7d7;   /* tono papel para bloques */
+  --caldo:       #e8a83a;   /* caldo dorado, acento principal */
+  --caldo-deep:  #cf8f24;
+  --culantro:    #567d3e;   /* verde hierba */
+  --rocoto:      #c6472f;   /* rojo ají, acento de calor */
+  --ink:         #182530;   /* texto sobre claro */
+  --ink-soft:    #4a5b64;   /* texto secundario */
+  --line:        #d9cdb8;   /* líneas sobre claro */
+
+  --maxw: 1180px;
+  --pad: clamp(1.25rem, 5vw, 4rem);
+
+  --font-display: "Fraunces", Georgia, "Times New Roman", serif;
+  --font-body: "Hanken Grotesk", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+
+  --r: 14px;
+  --shadow: 0 18px 40px -22px rgba(12, 42, 62, .55);
+}
+
+/* --- Reset ligero --- */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--steam);
+  line-height: 1.6;
+  font-size: clamp(1rem, .96rem + .2vw, 1.075rem);
+  overflow-x: hidden;
+}
+img, svg, iframe { max-width: 100%; display: block; }
+a { color: inherit; }
+h1, h2, h3, h4 { margin: 0; line-height: 1.05; font-weight: 500; }
+p { margin: 0 0 1rem; }
+ul, ol { margin: 0; padding: 0; list-style: none; }
+
+.skip {
+  position: absolute; left: -999px; top: 0; z-index: 999;
+  background: var(--caldo); color: var(--ink); padding: .6rem 1rem; border-radius: 0 0 8px 0;
+  font-weight: 700;
+}
+.skip:focus { left: 0; }
+
+:focus-visible {
+  outline: 3px solid var(--caldo);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* --- Superficie de esmalte moteado (la firma) --- */
+.enamel {
+  background-color: var(--enamel);
+  background-image:
+    radial-gradient(1.6px 1.6px at 12% 22%,  rgba(255,255,255,.55) 40%, transparent 42%),
+    radial-gradient(1.3px 1.3px at 78% 14%,  rgba(255,255,255,.40) 40%, transparent 42%),
+    radial-gradient(2px 2px   at 40% 62%,    rgba(255,255,255,.30) 40%, transparent 42%),
+    radial-gradient(1.4px 1.4px at 88% 74%,  rgba(255,255,255,.45) 40%, transparent 42%),
+    radial-gradient(1.2px 1.2px at 25% 82%,  rgba(255,255,255,.35) 40%, transparent 42%),
+    radial-gradient(1.7px 1.7px at 63% 34%,  rgba(255,255,255,.30) 40%, transparent 42%),
+    radial-gradient(1.2px 1.2px at 6% 56%,   rgba(255,255,255,.35) 40%, transparent 42%),
+    radial-gradient(1.5px 1.5px at 52% 8%,   rgba(255,255,255,.35) 40%, transparent 42%),
+    radial-gradient(120% 120% at 50% -10%, rgba(255,255,255,.06), transparent 55%);
+  background-size: 260px 260px, 300px 300px, 220px 220px, 280px 280px, 240px 240px, 320px 320px, 200px 200px, 260px 260px, 100% 100%;
+  color: var(--steam);
+}
+
+/* --- Tipografía utilitaria --- */
+.eyebrow {
+  font-family: var(--font-body);
+  text-transform: uppercase;
+  letter-spacing: .18em;
+  font-size: .74rem;
+  font-weight: 700;
+  color: var(--rocoto);
+  margin: 0 0 1rem;
+}
+.eyebrow--light { color: var(--caldo); }
+
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.1rem, 1.4rem + 3vw, 3.4rem);
+  letter-spacing: -.01em;
+}
+.section-title--light { color: var(--steam); }
+
+.section-lede {
+  color: var(--ink-soft);
+  max-width: 46ch;
+  margin: .9rem 0 0;
+}
+.section-lede--light { color: rgba(247,242,233,.78); }
+
+/* --- Botones --- */
+.btn {
+  --btn-bg: var(--caldo);
+  --btn-fg: var(--ink);
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: .5rem;
+  padding: .85rem 1.5rem;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: .95rem;
+  text-decoration: none;
+  border: none; cursor: pointer;
+  border-radius: 999px;
+  background: var(--btn-bg);
+  color: var(--btn-fg);
+  transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease;
+  box-shadow: 0 10px 22px -12px rgba(207,143,36,.9);
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:active { transform: translateY(0); }
+.btn--gold { --btn-bg: var(--caldo); --btn-fg: var(--enamel-deep); }
+.btn--gold:hover { background: var(--caldo-deep); }
+.btn--dark { --btn-bg: var(--enamel); --btn-fg: var(--steam); box-shadow: var(--shadow); }
+.btn--dark:hover { background: var(--enamel-deep); }
+.btn--ghost {
+  background: transparent; color: var(--steam);
+  box-shadow: inset 0 0 0 2px rgba(247,242,233,.5);
+}
+.btn--ghost:hover { box-shadow: inset 0 0 0 2px var(--steam); background: rgba(247,242,233,.08); }
+
+/* ============================ NAV ============================ */
+.nav {
+  position: sticky; top: 0; z-index: 50;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem;
+  padding: .7rem var(--pad);
+  background: rgba(247,242,233,.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+}
+.brand {
+  display: inline-flex; align-items: center; gap: .6rem;
+  text-decoration: none; color: var(--enamel);
+}
+.brand__mark { color: var(--caldo-deep); display: inline-flex; }
+.brand__text {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.05rem;
+  line-height: .98;
+  letter-spacing: -.01em;
+}
+.nav__menu {
+  display: flex; align-items: center; gap: 1.6rem;
+}
+.nav__menu a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--ink);
+  transition: color .15s ease;
+}
+.nav__menu a:hover { color: var(--rocoto); }
+.nav__cta {
+  background: var(--enamel); color: var(--steam) !important;
+  padding: .55rem 1.1rem; border-radius: 999px;
+}
+.nav__cta:hover { background: var(--rocoto); }
+
+.nav__toggle {
+  display: none;
+  flex-direction: column; gap: 5px;
+  background: none; border: none; cursor: pointer;
+  padding: .5rem;
+}
+.nav__toggle span {
+  width: 26px; height: 2.5px; background: var(--enamel); border-radius: 2px;
+  transition: transform .25s ease, opacity .2s ease;
+}
+.nav__toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+.nav__toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav__toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+/* ============================ HERO ============================ */
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 2rem;
+  min-height: min(88vh, 760px);
+  padding: clamp(3rem, 7vw, 6rem) var(--pad);
+  overflow: hidden;
+}
+.hero__inner { max-width: 40rem; position: relative; z-index: 2; }
+.hero__title {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(2.9rem, 1.5rem + 6.4vw, 6rem);
+  line-height: .96;
+  letter-spacing: -.02em;
+  margin: 0 0 1.4rem;
+  color: var(--steam);
+}
+.hero__title em {
+  font-style: italic;
+  color: var(--caldo);
+}
+.hero__lede {
+  font-size: clamp(1.05rem, 1rem + .4vw, 1.28rem);
+  color: rgba(247,242,233,.82);
+  max-width: 34ch;
+  margin-bottom: 2rem;
+}
+.hero__actions { display: flex; flex-wrap: wrap; gap: .9rem; margin-bottom: 2.2rem; }
+.hero__today {
+  display: inline-flex; align-items: center; gap: .6rem;
+  font-size: .95rem;
+  color: rgba(247,242,233,.85);
+  margin: 0;
+}
+.hero__today strong { color: var(--caldo); font-weight: 700; }
+.dot {
+  width: 9px; height: 9px; border-radius: 50%; background: var(--culantro);
+  box-shadow: 0 0 0 0 rgba(86,125,62,.7);
+  animation: pulse 2.4s infinite;
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(140,190,90,.6); }
+  70%  { box-shadow: 0 0 0 9px rgba(140,190,90,0); }
+  100% { box-shadow: 0 0 0 0 rgba(140,190,90,0); }
+}
+
+/* Firma: plato de barro con vapor */
+.hero__bowl {
+  position: relative; z-index: 1;
+  display: grid; place-items: end center;
+  height: 100%;
+  min-height: 320px;
+}
+.bowl {
+  position: relative;
+  width: min(360px, 68vw);
+  aspect-ratio: 1 / 1;
+  align-self: center;
+}
+.bowl__broth {
+  position: absolute; inset: 8% 6% 6%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 42% 36%, #ffd98a 0%, var(--caldo) 34%, var(--caldo-deep) 70%, #a8710f 100%);
+  box-shadow: inset 0 -14px 30px rgba(122,80,8,.55), inset 0 10px 26px rgba(255,240,200,.5);
+}
+.bowl__broth::after { /* trozos flotando */
+  content: "";
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background-image:
+    radial-gradient(6px 4px at 34% 44%, var(--culantro) 60%, transparent 62%),
+    radial-gradient(5px 3px at 60% 40%, #3f6030 60%, transparent 62%),
+    radial-gradient(7px 5px at 52% 60%, var(--rocoto) 60%, transparent 62%),
+    radial-gradient(5px 4px at 44% 66%, #e9c46a 60%, transparent 62%),
+    radial-gradient(4px 3px at 66% 58%, var(--culantro) 60%, transparent 62%);
+  opacity: .9;
+}
+.bowl__rim {
+  position: absolute; inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(160deg, #fbf6ec, #d9c9b0 55%, #b79d7e);
+  box-shadow: var(--shadow), inset 0 6px 16px rgba(255,255,255,.6);
+  z-index: -1;
+}
+.steam {
+  position: absolute;
+  top: 4%; left: 50%; transform: translateX(-50%);
+  width: 60%; height: 46%;
+  z-index: 2;
+}
+.steam span {
+  position: absolute; bottom: 0;
+  width: 16px; height: 100%;
+  background: linear-gradient(to top, rgba(255,255,255,0), rgba(255,255,255,.55) 60%, rgba(255,255,255,0));
+  border-radius: 40%;
+  filter: blur(5px);
+  opacity: 0;
+  animation: steam 4.5s ease-in-out infinite;
+}
+.steam span:nth-child(1) { left: 18%; animation-delay: 0s; }
+.steam span:nth-child(2) { left: 40%; animation-delay: 1.1s; }
+.steam span:nth-child(3) { left: 60%; animation-delay: .5s; }
+.steam span:nth-child(4) { left: 78%; animation-delay: 1.7s; }
+@keyframes steam {
+  0%   { opacity: 0; transform: translateY(10px) scaleX(1) skewX(0deg); }
+  30%  { opacity: .7; }
+  70%  { opacity: .5; transform: translateY(-30px) scaleX(1.4) skewX(-8deg); }
+  100% { opacity: 0; transform: translateY(-60px) scaleX(1.8) skewX(6deg); }
+}
+
+/* ============================ MARQUEE ============================ */
+.marquee {
+  background: var(--rocoto);
+  color: var(--steam);
+  overflow: hidden;
+  padding: .7rem 0;
+  border-top: 3px solid var(--enamel-deep);
+  border-bottom: 3px solid var(--enamel-deep);
+}
+.marquee__track {
+  display: inline-flex; align-items: center; gap: 1.2rem;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  animation: slide 28s linear infinite;
+  will-change: transform;
+}
+.marquee__track .sep { color: var(--caldo); }
+@keyframes slide {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* ============================ VALUES ============================ */
+.values {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(3rem, 6vw, 5rem) var(--pad);
+}
+.values__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(1.2rem, 3vw, 2.4rem);
+}
+.values__grid li {
+  border-top: 2px solid var(--enamel);
+  padding-top: 1.1rem;
+}
+.values__grid h3 {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  margin-bottom: .5rem;
+  color: var(--enamel);
+}
+.values__grid p { color: var(--ink-soft); margin: 0; font-size: .98rem; }
+
+/* ============================ CARTA ============================ */
+.carta {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem) var(--pad) clamp(3rem, 7vw, 6rem);
+}
+.carta__head { text-align: center; margin-bottom: clamp(2rem, 4vw, 3.5rem); }
+.carta__head .section-lede { margin-inline: auto; }
+.carta__cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 5rem);
+}
+.carta__cat {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--rocoto);
+  padding-bottom: .7rem;
+  margin-bottom: 1.2rem;
+  border-bottom: 2px solid var(--line);
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1rem;
+}
+.carta__cat span {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-weight: 700;
+  color: var(--culantro);
+  white-space: nowrap;
+}
+.carta__cat--tight { margin-top: 2.5rem; }
+
+.menu__item { padding: .55rem 0; }
+.menu__row {
+  display: flex; align-items: baseline; gap: .5rem;
+}
+.menu__name {
+  font-weight: 600;
+  font-size: 1.06rem;
+  color: var(--ink);
+}
+.menu__leader {
+  flex: 1;
+  border-bottom: 2px dotted var(--line);
+  transform: translateY(-3px);
+}
+.menu__price {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 1.05rem;
+  color: var(--enamel);
+  white-space: nowrap;
+}
+.menu__desc {
+  margin: .15rem 0 0;
+  font-size: .92rem;
+  color: var(--ink-soft);
+  max-width: 44ch;
+}
+.menu__desc em { color: var(--rocoto); font-style: italic; }
+.menu--compact .menu__item { padding: .35rem 0; }
+
+/* ============================ SOPA DEL DÍA ============================ */
+.today {
+  padding: clamp(3rem, 7vw, 5.5rem) var(--pad);
+}
+.today__head { text-align: center; max-width: 46ch; margin: 0 auto clamp(2rem, 4vw, 3rem); }
+.today__head .section-lede { margin-inline: auto; }
+.week {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: .8rem;
+}
+.week__day {
+  display: flex; flex-direction: column; gap: .4rem;
+  padding: 1.2rem 1rem;
+  border-radius: var(--r);
+  background: rgba(247,242,233,.07);
+  border: 1px solid rgba(247,242,233,.16);
+  text-align: center;
+  transition: transform .2s ease, background-color .2s ease;
+}
+.week__d {
+  font-weight: 800; text-transform: uppercase; letter-spacing: .1em;
+  font-size: .78rem; color: var(--caldo);
+}
+.week__s {
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  color: var(--steam);
+  line-height: 1.15;
+}
+.week__day--today {
+  background: var(--caldo);
+  border-color: var(--caldo);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px -16px rgba(0,0,0,.5);
+}
+.week__day--today .week__d { color: var(--enamel-deep); }
+.week__day--today .week__s { color: var(--enamel-deep); }
+
+/* ============================ NOSOTROS ============================ */
+.about {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(3.5rem, 8vw, 6rem) var(--pad);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(2rem, 6vw, 4.5rem);
+  align-items: center;
+}
+.about__text p { color: var(--ink-soft); }
+.about__text .btn { margin-top: 1rem; }
+.about__gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(2, 150px);
+  gap: 1rem;
+}
+.dish-photo {
+  border-radius: var(--r);
+  position: relative;
+  overflow: hidden;
+  display: flex; align-items: flex-end;
+  padding: .8rem;
+  box-shadow: var(--shadow);
+  color: #fff;
+}
+.dish-photo span {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: .95rem;
+  position: relative; z-index: 2;
+  text-shadow: 0 1px 6px rgba(0,0,0,.5);
+}
+.dish-photo::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.45), transparent 55%);
+}
+.dish-photo--a {
+  grid-row: span 2;
+  background: radial-gradient(circle at 40% 35%, #ffcf7a, var(--caldo) 45%, #a8710f 100%);
+}
+.dish-photo--b { background: linear-gradient(150deg, var(--enamel), var(--enamel-deep)); }
+.dish-photo--c { background: linear-gradient(150deg, var(--culantro), #33501f); }
+
+/* ============================ VISÍTANOS ============================ */
+.visit {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 4rem) var(--pad) clamp(3.5rem, 8vw, 6rem);
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+.facts { margin: 1.5rem 0; }
+.facts__row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--line);
+}
+.facts__row:last-child { border-bottom: 1px solid var(--line); }
+.facts dt {
+  font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+  font-size: .74rem; color: var(--rocoto);
+  padding-top: .2rem;
+}
+.facts dd { margin: 0; color: var(--ink); }
+.facts dd a { color: var(--enamel); font-weight: 600; text-underline-offset: 3px; }
+.visit__map {
+  border-radius: var(--r);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 6px solid var(--enamel);
+}
+.visit__map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 360px;
+  border: 0;
+  filter: saturate(.9);
+}
+
+/* ============================ RESERVAR ============================ */
+.reserve { padding: clamp(3rem, 7vw, 5.5rem) var(--pad); }
+.reserve__inner {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: .8fr 1.2fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+.reserve__intro { position: sticky; top: 90px; }
+.rform {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.1rem 1.2rem;
+  background: rgba(247,242,233,.06);
+  border: 1px solid rgba(247,242,233,.16);
+  border-radius: 18px;
+  padding: clamp(1.4rem, 3vw, 2.2rem);
+}
+.rform__field { display: flex; flex-direction: column; gap: .4rem; }
+.rform__field--wide { grid-column: 1 / -1; }
+.rform label {
+  font-weight: 700; font-size: .82rem;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--caldo);
+}
+.rform label span { text-transform: none; letter-spacing: 0; color: rgba(247,242,233,.55); font-weight: 500; }
+.rform input, .rform select {
+  font-family: var(--font-body); font-size: 1rem;
+  padding: .8rem .9rem;
+  border-radius: 10px;
+  border: 1.5px solid rgba(247,242,233,.28);
+  background: rgba(255,255,255,.96);
+  color: var(--ink);
+}
+.rform input::placeholder { color: #8a97a0; }
+.rform input:focus, .rform select:focus { outline: 3px solid var(--caldo); outline-offset: 1px; border-color: transparent; }
+.rform input[aria-invalid="true"] { border-color: var(--rocoto); background: #fff4f1; }
+.rform__error { color: #ffd0c6; font-size: .8rem; min-height: 1em; font-weight: 600; }
+.rform__actions {
+  grid-column: 1 / -1;
+  display: flex; align-items: center; gap: 1.2rem; flex-wrap: wrap;
+  margin-top: .3rem;
+}
+.rform__note { margin: 0; font-size: .92rem; color: var(--caldo); font-weight: 600; }
+.rform__note--ok { color: #bfe3a6; }
+
+/* ============================ FOOTER ============================ */
+.foot {
+  background: var(--enamel-deep);
+  color: rgba(247,242,233,.8);
+  padding: clamp(3rem, 6vw, 4.5rem) var(--pad) 2rem;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1fr;
+  gap: 2rem;
+}
+.foot__brand p { max-width: 30ch; margin-top: .6rem; font-size: .95rem; }
+.brand__text--foot {
+  color: var(--steam); font-size: 1.4rem; line-height: 1;
+  display: inline-block;
+}
+.foot__col h4 {
+  font-family: var(--font-body);
+  text-transform: uppercase; letter-spacing: .12em; font-size: .78rem;
+  color: var(--caldo); margin-bottom: .8rem;
+}
+.foot__col p { font-size: .95rem; margin: 0; }
+.foot__col a { text-decoration: none; }
+.foot__col a:hover { color: var(--caldo); }
+.foot__legal {
+  grid-column: 1 / -1;
+  margin: 1.5rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(247,242,233,.15);
+  font-size: .84rem;
+  color: rgba(247,242,233,.5);
+}
+
+/* ============================ REVEAL (scroll) ============================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+.reveal.is-visible { opacity: 1; transform: none; }
+
+/* ============================ RESPONSIVE ============================ */
+@media (max-width: 900px) {
+  .nav__toggle { display: flex; }
+  .nav__menu {
+    position: absolute; top: 100%; right: 0; left: 0;
+    flex-direction: column; align-items: stretch;
+    gap: 0;
+    background: var(--steam);
+    border-bottom: 1px solid var(--line);
+    padding: .5rem var(--pad) 1.2rem;
+    transform: translateY(-12px);
+    opacity: 0; pointer-events: none;
+    transition: opacity .22s ease, transform .22s ease;
+  }
+  .nav__menu.is-open { opacity: 1; pointer-events: auto; transform: none; }
+  .nav__menu a { padding: .85rem 0; border-bottom: 1px solid var(--line); }
+  .nav__cta { text-align: center; margin-top: .8rem; border-bottom: none !important; }
+
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero__bowl { order: -1; min-height: 260px; margin-bottom: 1rem; }
+  .bowl { width: min(280px, 60vw); }
+
+  .values__grid { grid-template-columns: 1fr 1fr; }
+  .carta__cols { grid-template-columns: 1fr; }
+  .week { grid-template-columns: repeat(4, 1fr); }
+  .about { grid-template-columns: 1fr; }
+  .visit { grid-template-columns: 1fr; }
+  .reserve__inner { grid-template-columns: 1fr; }
+  .reserve__intro { position: static; }
+  .foot { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .values__grid { grid-template-columns: 1fr; }
+  .week { grid-template-columns: repeat(2, 1fr); }
+  .rform { grid-template-columns: 1fr; }
+  .foot { grid-template-columns: 1fr; }
+  .about__gallery { grid-template-rows: repeat(2, 120px); }
+  .facts__row { grid-template-columns: 1fr; gap: .3rem; }
+}
+
+/* ============================ MOVIMIENTO REDUCIDO ============================ */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: .001ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .steam span { opacity: .4; }
+}
+
+  </style>
+</head>
+<body>
+<!--
+  La Casa de las Sopas — sitio web
+  Av. de la Marina 1541, San Miguel 15086, Lima
+
+  CÓMO PERSONALIZAR (lee esto):
+  - Busca la palabra REEMPLAZAR en este archivo: marca lo que debes cambiar
+    por datos reales (telefono, horarios, redes, fotos).
+  - Las fotos son marcadores de color; sustituye cada div.dish-photo por una
+    etiqueta img real cuando la tengas (ver README.md).
+-->
+<a class="skip" href="#carta">Saltar al contenido</a>
+
+<main>
+  <!-- ============================ NAV ============================ -->
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="La Casa de las Sopas, inicio">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34" fill="none">
+          <path d="M6 20c0-1 .7-1.6 1.7-1.6h24.6c1 0 1.7.6 1.7 1.6 0 6.6-4.7 11.4-11 12.5V35h-6v-2.5C10.7 31.4 6 26.6 6 20Z" fill="currentColor"/>
+          <path d="M15 6c-1.4 1.6-1.4 3.4 0 5M20 4c-1.4 1.6-1.4 3.4 0 5M25 6c-1.4 1.6-1.4 3.4 0 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand__text">La Casa<br>de las Sopas</span>
+    </a>
+
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav__menu" id="nav-menu">
+      <a href="#carta">La carta</a>
+      <a href="#sopa-del-dia">Sopa del día</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#visitanos">Visítanos</a>
+      <a class="nav__cta" href="#reservar">Reservar</a>
+    </nav>
+  </header>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero enamel" aria-labelledby="hero-title">
+    <div class="hero__inner">
+      <p class="eyebrow eyebrow--light">San Miguel, Lima · Caldos &amp; sopas caseras</p>
+      <h1 class="hero__title" id="hero-title">
+        El caldo de<br><em>siempre</em>, como<br>en casa.
+      </h1>
+      <p class="hero__lede">
+        Ollas que hierven desde temprano, presas generosas y esa cuchara que
+        levanta a cualquiera. Cocina peruana de casa, servida bien caliente.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="#carta">Ver la carta</a>
+        <a class="btn btn--ghost" href="#reservar">Reservar mesa</a>
+      </div>
+
+      <p class="hero__today">
+        <span class="dot" aria-hidden="true"></span>
+        Hoy en la olla: <strong data-today-dish>Caldo de gallina</strong>
+      </p>
+    </div>
+
+    <!-- Firma: plato de barro con vapor -->
+    <div class="hero__bowl" aria-hidden="true">
+      <div class="steam">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="bowl">
+        <div class="bowl__broth"></div>
+        <div class="bowl__rim"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ TIRA / VALORES ============================ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Caldo de gallina</span><span class="sep">•</span>
+      <span>Sopa criolla</span><span class="sep">•</span>
+      <span>Chupe de camarones</span><span class="sep">•</span>
+      <span>Parihuela</span><span class="sep">•</span>
+      <span>Sancochado</span><span class="sep">•</span>
+      <span>Aguadito</span><span class="sep">•</span>
+      <span>Menestrón</span><span class="sep">•</span>
+      <span>Shámbar</span><span class="sep">•</span>
+      <span>Caldo de gallina</span><span class="sep">•</span>
+      <span>Sopa criolla</span><span class="sep">•</span>
+      <span>Chupe de camarones</span><span class="sep">•</span>
+      <span>Parihuela</span><span class="sep">•</span>
+      <span>Sancochado</span><span class="sep">•</span>
+      <span>Aguadito</span><span class="sep">•</span>
+      <span>Menestrón</span><span class="sep">•</span>
+      <span>Shámbar</span><span class="sep">•</span>
+    </div>
+  </div>
+
+  <section class="values">
+    <ul class="values__grid">
+      <li class="reveal">
+        <h3>Caldo de verdad</h3>
+        <p>Fondos que se cocinan por horas, sin cubos ni atajos. Se nota en la primera cucharada.</p>
+      </li>
+      <li class="reveal">
+        <h3>Porciones de casa</h3>
+        <p>Presas que se ven y platos que llenan. Aquí nadie se levanta con hambre.</p>
+      </li>
+      <li class="reveal">
+        <h3>Receta de siempre</h3>
+        <p>Las mismas ollas y las mismas manos desde el primer día en la Marina.</p>
+      </li>
+      <li class="reveal">
+        <h3>Mercado del día</h3>
+        <p>Verduras, presas y culantro comprados fresco cada mañana en el barrio.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============================ CARTA ============================ -->
+  <section class="carta" id="carta" aria-labelledby="carta-title">
+    <div class="carta__head">
+      <p class="eyebrow">Servido bien caliente</p>
+      <h2 class="section-title" id="carta-title">La carta</h2>
+      <p class="section-lede">Precios en soles. Todos los caldos vienen con su cancha y ají de la casa.</p>
+    </div>
+
+    <div class="carta__cols">
+      <div class="carta__group">
+        <h3 class="carta__cat">Caldos &amp; sopas <span>la especialidad</span></h3>
+
+        <ul class="menu">
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Caldo de gallina</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 18</span>
+            </div>
+            <p class="menu__desc">Presa de gallina, fideos, huevo, papa amarilla y culantro.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Sopa criolla</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 16</span>
+            </div>
+            <p class="menu__desc">Carne, fideos cabello de ángel, leche, ají panca y huevo.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Aguadito de pollo</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 15</span>
+            </div>
+            <p class="menu__desc">Pollo, arroz verde, culantro y arvejas. El clásico levanta muertos.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Sopa a la minuta</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 14</span>
+            </div>
+            <p class="menu__desc">Carne molida, leche, fideos y tomate. Lista en un minuto.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Menestrón</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 16</span>
+            </div>
+            <p class="menu__desc">Verduras, fideos, albahaca fresca y queso.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Dieta de pollo</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 14</span>
+            </div>
+            <p class="menu__desc">Pechuga, fideos, zanahoria y apio. Suave y reconfortante.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="carta__group">
+        <h3 class="carta__cat">De olla grande <span>para compartir</span></h3>
+
+        <ul class="menu">
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Chupe de camarones</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 32</span>
+            </div>
+            <p class="menu__desc">Camarones, huevo, queso, leche y papa. El engreído de la casa.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Parihuela</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 34</span>
+            </div>
+            <p class="menu__desc">Mariscos, pescado y caldo concentrado con ají panca.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Sancochado</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 22</span>
+            </div>
+            <p class="menu__desc">Carne, yuca, choclo, camote y col. Un almuerzo entero en un plato.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Shámbar</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 20</span>
+            </div>
+            <p class="menu__desc">Trigo, menestras, jamón y cerdo. <em>Solo los lunes.</em></p>
+          </li>
+        </ul>
+
+        <h3 class="carta__cat carta__cat--tight">Para acompañar &amp; postres</h3>
+        <ul class="menu menu--compact">
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Seco de res con frejoles</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 22</span>
+            </div>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Chicha morada · jarra</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 12</span>
+            </div>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Emoliente</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 6</span>
+            </div>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Arroz con leche &amp; mazamorra</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 9</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SOPA DEL DÍA ============================ -->
+  <section class="today enamel" id="sopa-del-dia" aria-labelledby="today-title">
+    <div class="today__head">
+      <p class="eyebrow eyebrow--light">Cada día, su olla</p>
+      <h2 class="section-title section-title--light" id="today-title">La sopa de cada día</h2>
+      <p class="section-lede section-lede--light">Un caldo distinto para cada día de la semana. El de hoy va marcado.</p>
+    </div>
+
+    <ol class="week" role="list">
+      <li class="week__day" data-day="1"><span class="week__d">Lun</span><span class="week__s">Shámbar</span></li>
+      <li class="week__day" data-day="2"><span class="week__d">Mar</span><span class="week__s">Sopa criolla</span></li>
+      <li class="week__day" data-day="3"><span class="week__d">Mié</span><span class="week__s">Sancochado</span></li>
+      <li class="week__day" data-day="4"><span class="week__d">Jue</span><span class="week__s">Menestrón</span></li>
+      <li class="week__day" data-day="5"><span class="week__d">Vie</span><span class="week__s">Chupe de camarones</span></li>
+      <li class="week__day" data-day="6"><span class="week__d">Sáb</span><span class="week__s">Caldo de gallina</span></li>
+      <li class="week__day" data-day="0"><span class="week__d">Dom</span><span class="week__s">Aguadito de pollo</span></li>
+    </ol>
+  </section>
+
+  <!-- ============================ NOSOTROS ============================ -->
+  <section class="about" id="nosotros" aria-labelledby="about-title">
+    <div class="about__text reveal">
+      <p class="eyebrow">Desde la Marina</p>
+      <h2 class="section-title" id="about-title">Una olla que no se apaga</h2>
+      <p>
+        La Casa de las Sopas nació con una idea simple: que en San Miguel
+        nunca falte un buen caldo. Empezamos con dos ollas de peltre y la
+        receta de la abuela, y hasta hoy seguimos con las mismas manos
+        cuidando el fondo desde antes de que salga el sol.
+      </p>
+      <p>
+        No hay secreto ni truco: tiempo, presa buena y culantro fresco. Ven,
+        siéntate y déjate llevar por el vapor.
+      </p>
+      <a class="btn btn--dark" href="#reservar">Aparta tu mesa</a>
+    </div>
+
+    <div class="about__gallery" aria-label="Fotos del restaurante">
+      <!-- REEMPLAZAR cada marcador por una <img src="assets/foto.jpg" alt="..."> -->
+      <div class="dish-photo dish-photo--a" role="img" aria-label="Caldo de gallina humeante">
+        <span>Caldo de gallina</span>
+      </div>
+      <div class="dish-photo dish-photo--b" role="img" aria-label="Olla de peltre en la cocina">
+        <span>La cocina</span>
+      </div>
+      <div class="dish-photo dish-photo--c" role="img" aria-label="Chupe de camarones servido">
+        <span>Chupe de camarones</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ VISÍTANOS ============================ -->
+  <section class="visit" id="visitanos" aria-labelledby="visit-title">
+    <div class="visit__info reveal">
+      <p class="eyebrow">Visítanos</p>
+      <h2 class="section-title" id="visit-title">Te esperamos con la olla lista</h2>
+
+      <dl class="facts">
+        <div class="facts__row">
+          <dt>Dirección</dt>
+          <dd>Av. de la Marina 1541<br>San Miguel 15086, Lima</dd>
+        </div>
+        <div class="facts__row">
+          <dt>Horario</dt>
+          <!-- REEMPLAZAR: confirma tus horarios reales -->
+          <dd>Lunes a domingo<br>8:00 a. m. – 5:00 p. m.</dd>
+        </div>
+        <div class="facts__row">
+          <dt>Reservas</dt>
+          <!-- REEMPLAZAR: pon tu teléfono / WhatsApp real -->
+          <dd><a href="tel:+5100000000">(01) 000-0000</a><br><a href="#reservar">Reserva en línea</a></dd>
+        </div>
+      </dl>
+
+      <a class="btn btn--dark" target="_blank" rel="noopener"
+         href="https://www.google.com/maps/search/?api=1&query=Av.+de+la+Marina+1541+San+Miguel+15086+Lima">
+        Cómo llegar
+      </a>
+    </div>
+
+    <div class="visit__map reveal">
+      <!-- El mapa se carga en el navegador del visitante -->
+      <iframe
+        title="Ubicación de La Casa de las Sopas en el mapa"
+        src="https://www.google.com/maps?q=Av.+de+la+Marina+1541,+San+Miguel+15086,+Lima&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- ============================ RESERVAR ============================ -->
+  <section class="reserve enamel" id="reservar" aria-labelledby="reserve-title">
+    <div class="reserve__inner">
+      <div class="reserve__intro">
+        <p class="eyebrow eyebrow--light">Reservar</p>
+        <h2 class="section-title section-title--light" id="reserve-title">Aparta tu mesa</h2>
+        <p class="section-lede section-lede--light">
+          Cuéntanos cuándo vienes y para cuántos. Te confirmamos por teléfono
+          o WhatsApp.
+        </p>
+      </div>
+
+      <form class="rform" novalidate>
+        <div class="rform__field">
+          <label for="r-name">Nombre</label>
+          <input id="r-name" name="name" type="text" autocomplete="name" required placeholder="Tu nombre">
+          <small class="rform__error" data-error-for="r-name"></small>
+        </div>
+
+        <div class="rform__field">
+          <label for="r-phone">Teléfono</label>
+          <input id="r-phone" name="phone" type="tel" autocomplete="tel" required placeholder="9xx xxx xxx">
+          <small class="rform__error" data-error-for="r-phone"></small>
+        </div>
+
+        <div class="rform__field">
+          <label for="r-date">Fecha</label>
+          <input id="r-date" name="date" type="date" required>
+          <small class="rform__error" data-error-for="r-date"></small>
+        </div>
+
+        <div class="rform__field">
+          <label for="r-time">Hora</label>
+          <input id="r-time" name="time" type="time" required value="13:00">
+          <small class="rform__error" data-error-for="r-time"></small>
+        </div>
+
+        <div class="rform__field">
+          <label for="r-guests">Personas</label>
+          <select id="r-guests" name="guests" required>
+            <option value="1">1 persona</option>
+            <option value="2" selected>2 personas</option>
+            <option value="3">3 personas</option>
+            <option value="4">4 personas</option>
+            <option value="5">5 personas</option>
+            <option value="6">6 personas</option>
+            <option value="7+">7 o más</option>
+          </select>
+        </div>
+
+        <div class="rform__field rform__field--wide">
+          <label for="r-notes">Notas <span>(opcional)</span></label>
+          <input id="r-notes" name="notes" type="text" placeholder="Trona para bebé, cumpleaños, mesa cerca de la ventana…">
+        </div>
+
+        <div class="rform__actions">
+          <button class="btn btn--gold" type="submit">Enviar solicitud</button>
+          <p class="rform__note" role="status" aria-live="polite" data-form-status></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="foot">
+    <div class="foot__brand">
+      <span class="brand__text brand__text--foot">La Casa de las Sopas</span>
+      <p>Caldos y sopas caseras en el corazón de San Miguel.</p>
+    </div>
+    <div class="foot__col">
+      <h4>Dónde</h4>
+      <p>Av. de la Marina 1541<br>San Miguel 15086, Lima</p>
+    </div>
+    <div class="foot__col">
+      <h4>Horario</h4>
+      <p>Lun – Dom<br>8:00 a. m. – 5:00 p. m.</p>
+    </div>
+    <div class="foot__col">
+      <h4>Síguenos</h4>
+      <!-- REEMPLAZAR: enlaces reales de redes -->
+      <p>
+        <a href="#" aria-label="Facebook">Facebook</a><br>
+        <a href="#" aria-label="Instagram">Instagram</a><br>
+        <a href="#" aria-label="WhatsApp">WhatsApp</a>
+      </p>
+    </div>
+    <p class="foot__legal">© <span data-year>2026</span> La Casa de las Sopas · Hecho con caldo en San Miguel.</p>
+  </footer>
+</main>
+
+<script>
+/* =========================================================================
+   La Casa de las Sopas — interacciones
+   Sin dependencias. Todo se degrada con gracia si el JS no carga.
+   ========================================================================= */
+(function () {
+  "use strict";
+
+  /* ---- Año en el footer ---- */
+  const yearEl = document.querySelector("[data-year]");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---- Menú móvil ---- */
+  const toggle = document.querySelector(".nav__toggle");
+  const menu = document.getElementById("nav-menu");
+  if (toggle && menu) {
+    const closeMenu = () => {
+      menu.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.setAttribute("aria-label", "Abrir menú");
+    };
+    toggle.addEventListener("click", () => {
+      const open = menu.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Cerrar menú" : "Abrir menú");
+    });
+    // Cerrar al elegir un enlace o al presionar Escape
+    menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeMenu));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && menu.classList.contains("is-open")) {
+        closeMenu();
+        toggle.focus();
+      }
+    });
+  }
+
+  /* ---- Sopa del día: resalta el día actual y actualiza el hero ---- */
+  const today = new Date().getDay(); // 0 = domingo … 6 = sábado
+  const todayCard = document.querySelector('.week__day[data-day="' + today + '"]');
+  if (todayCard) {
+    todayCard.classList.add("week__day--today");
+    todayCard.setAttribute("aria-current", "date");
+    const dish = todayCard.querySelector(".week__s");
+    const heroDish = document.querySelector("[data-today-dish]");
+    if (dish && heroDish) heroDish.textContent = dish.textContent;
+  }
+
+  /* ---- Reveal al hacer scroll ---- */
+  const reveals = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window && reveals.length) {
+    const io = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            obs.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+    );
+    reveals.forEach((el) => io.observe(el));
+  } else {
+    reveals.forEach((el) => el.classList.add("is-visible"));
+  }
+
+  /* ---- Formulario de reserva ---- */
+  const form = document.querySelector(".rform");
+  if (!form) return;
+
+  const status = form.querySelector("[data-form-status]");
+  const fields = {
+    name: form.querySelector("#r-name"),
+    phone: form.querySelector("#r-phone"),
+    date: form.querySelector("#r-date"),
+    time: form.querySelector("#r-time"),
+  };
+
+  // La fecha mínima es hoy
+  if (fields.date) {
+    const d = new Date();
+    const iso = new Date(d.getTime() - d.getTimezoneOffset() * 60000).toISOString().slice(0, 10);
+    fields.date.min = iso;
+    if (!fields.date.value) fields.date.value = iso;
+  }
+
+  const setError = (input, message) => {
+    const slot = form.querySelector('[data-error-for="' + input.id + '"]');
+    if (slot) slot.textContent = message || "";
+    input.setAttribute("aria-invalid", message ? "true" : "false");
+  };
+
+  const validators = {
+    name: (v) => (v.trim().length >= 2 ? "" : "Escribe tu nombre."),
+    phone: (v) =>
+      /^[0-9+\s()-]{6,}$/.test(v.trim()) ? "" : "Deja un teléfono válido.",
+    date: (v) => (v ? "" : "Elige una fecha."),
+    time: (v) => (v ? "" : "Elige una hora."),
+  };
+
+  const validateField = (key) => {
+    const input = fields[key];
+    if (!input) return true;
+    const msg = validators[key](input.value);
+    setError(input, msg);
+    return !msg;
+  };
+
+  // Valida al salir del campo, y limpia el error mientras se corrige
+  Object.keys(fields).forEach((key) => {
+    const input = fields[key];
+    if (!input) return;
+    input.addEventListener("blur", () => validateField(key));
+    input.addEventListener("input", () => {
+      if (input.getAttribute("aria-invalid") === "true") validateField(key);
+    });
+  });
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const results = Object.keys(fields).map(validateField);
+    const ok = results.every(Boolean);
+
+    if (!ok) {
+      status.textContent = "Revisa los campos marcados.";
+      status.classList.remove("rform__note--ok");
+      const firstBad = form.querySelector('[aria-invalid="true"]');
+      if (firstBad) firstBad.focus();
+      return;
+    }
+
+    const data = new FormData(form);
+    const nombre = String(data.get("name")).trim().split(" ")[0];
+    const personas = data.get("guests");
+    const fecha = data.get("date");
+    const hora = data.get("time");
+
+    status.textContent =
+      "¡Gracias, " + nombre + "! Recibimos tu solicitud para " + personas +
+      " el " + fecha + " a las " + hora + ". Te confirmamos pronto.";
+    status.classList.add("rform__note--ok");
+
+    form.reset();
+    Object.values(fields).forEach((i) => i && i.setAttribute("aria-invalid", "false"));
+
+    // NOTA PARA EL DUEÑO: aquí no hay servidor todavía. Para recibir las
+    // reservas de verdad, conecta este formulario a tu correo/WhatsApp o a un
+    // servicio como Formspree. Ver README.md.
+  });
+})();
+
+</script>
+</body>
+</html>
