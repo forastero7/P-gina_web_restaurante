@@ -1,0 +1,13 @@
+Coloca aquí las fotos del restaurante (platos, local, cocina).
+
+Recomendado:
+- Formato horizontal, 1200 px de ancho o más.
+- .jpg para fotos, .webp si quieres que pesen menos.
+
+Luego, en index.html, reemplaza los bloques <div class="dish-photo">
+por una imagen real, por ejemplo:
+
+  <img class="dish-photo dish-photo--a" src="assets/caldo-de-gallina.jpg"
+       alt="Caldo de gallina humeante">
+
+Ver README.md para más detalles.

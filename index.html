@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La Casa de las Sopas · Caldos y sopas caseras en San Miguel, Lima</title>
+  <meta name="description" content="Caldos y sopas caseras peruanas en San Miguel. Caldo de gallina, sopa criolla, chupe de camarones y más, servidos bien calientes. Av. de la Marina 1541.">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="restaurant">
+  <meta property="og:title" content="La Casa de las Sopas">
+  <meta property="og:description" content="El caldo de siempre, como en casa. San Miguel, Lima.">
+  <meta property="og:locale" content="es_PE">
+
+  <!-- Favicon: cuchara -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23123B57'/%3E%3Cpath d='M6 17c0-.8.5-1.3 1.3-1.3h17.4c.8 0 1.3.5 1.3 1.3 0 5-3.6 8.6-8.3 9.4V28h-3.4v-1.6C9.6 25.6 6 22 6 17Z' fill='%23E8A83A'/%3E%3C/svg%3E">
+
+  <!-- Fuentes: Fraunces (títulos) + Hanken Grotesk (cuerpo) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<!--
+  La Casa de las Sopas — sitio web
+  Av. de la Marina 1541, San Miguel 15086, Lima
+
+  CÓMO PERSONALIZAR (lee esto):
+  - Busca la palabra REEMPLAZAR en este archivo: marca lo que debes cambiar
+    por datos reales (telefono, horarios, redes, fotos).
+  - Las fotos son marcadores de color; sustituye cada div.dish-photo por una
+    etiqueta img real cuando la tengas (ver README.md).
+-->
+<a class="skip" href="#carta">Saltar al contenido</a>
+
+<main>
+  <!-- ============================ NAV ============================ -->
+  <header class="nav" id="top">
+    <a class="brand" href="#top" aria-label="La Casa de las Sopas, inicio">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 40 40" width="34" height="34" fill="none">
+          <path d="M6 20c0-1 .7-1.6 1.7-1.6h24.6c1 0 1.7.6 1.7 1.6 0 6.6-4.7 11.4-11 12.5V35h-6v-2.5C10.7 31.4 6 26.6 6 20Z" fill="currentColor"/>
+          <path d="M15 6c-1.4 1.6-1.4 3.4 0 5M20 4c-1.4 1.6-1.4 3.4 0 5M25 6c-1.4 1.6-1.4 3.4 0 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand__text">La Casa<br>de las Sopas</span>
+    </a>
+
+    <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav__menu" id="nav-menu">
+      <a href="#carta">La carta</a>
+      <a href="#sopa-del-dia">Sopa del día</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#visitanos">Visítanos</a>
+      <a class="nav__cta" href="#reservar">Reservar</a>
+    </nav>
+  </header>
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero enamel" aria-labelledby="hero-title">
+    <div class="hero__inner">
+      <p class="eyebrow eyebrow--light">San Miguel, Lima · Caldos &amp; sopas caseras</p>
+      <h1 class="hero__title" id="hero-title">
+        El caldo de<br><em>siempre</em>, como<br>en casa.
+      </h1>
+      <p class="hero__lede">
+        Ollas que hierven desde temprano, presas generosas y esa cuchara que
+        levanta a cualquiera. Cocina peruana de casa, servida bien caliente.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn--gold" href="#carta">Ver la carta</a>
+        <a class="btn btn--ghost" href="#reservar">Reservar mesa</a>
+      </div>
+
+      <p class="hero__today">
+        <span class="dot" aria-hidden="true"></span>
+        Hoy en la olla: <strong data-today-dish>Caldo de gallina</strong>
+      </p>
+    </div>
+
+    <!-- Firma: plato de barro con vapor -->
+    <div class="hero__bowl" aria-hidden="true">
+      <div class="steam">
+        <span></span><span></span><span></span><span></span>
+      </div>
+      <div class="bowl">
+        <div class="bowl__broth"></div>
+        <div class="bowl__rim"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ TIRA / VALORES ============================ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Caldo de gallina</span><span class="sep">•</span>
+      <span>Sopa criolla</span><span class="sep">•</span>
+      <span>Chupe de camarones</span><span class="sep">•</span>
+      <span>Parihuela</span><span class="sep">•</span>
+      <span>Sancochado</span><span class="sep">•</span>
+      <span>Aguadito</span><span class="sep">•</span>
+      <span>Menestrón</span><span class="sep">•</span>
+      <span>Shámbar</span><span class="sep">•</span>
+      <span>Caldo de gallina</span><span class="sep">•</span>
+      <span>Sopa criolla</span><span class="sep">•</span>
+      <span>Chupe de camarones</span><span class="sep">•</span>
+      <span>Parihuela</span><span class="sep">•</span>
+      <span>Sancochado</span><span class="sep">•</span>
+      <span>Aguadito</span><span class="sep">•</span>
+      <span>Menestrón</span><span class="sep">•</span>
+      <span>Shámbar</span><span class="sep">•</span>
+    </div>
+  </div>
+
+  <section class="values">
+    <ul class="values__grid">
+      <li class="reveal">
+        <h3>Caldo de verdad</h3>
+        <p>Fondos que se cocinan por horas, sin cubos ni atajos. Se nota en la primera cucharada.</p>
+      </li>
+      <li class="reveal">
+        <h3>Porciones de casa</h3>
+        <p>Presas que se ven y platos que llenan. Aquí nadie se levanta con hambre.</p>
+      </li>
+      <li class="reveal">
+        <h3>Receta de siempre</h3>
+        <p>Las mismas ollas y las mismas manos desde el primer día en la Marina.</p>
+      </li>
+      <li class="reveal">
+        <h3>Mercado del día</h3>
+        <p>Verduras, presas y culantro comprados fresco cada mañana en el barrio.</p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============================ CARTA ============================ -->
+  <section class="carta" id="carta" aria-labelledby="carta-title">
+    <div class="carta__head">
+      <p class="eyebrow">Servido bien caliente</p>
+      <h2 class="section-title" id="carta-title">La carta</h2>
+      <p class="section-lede">Precios en soles. Todos los caldos vienen con su cancha y ají de la casa.</p>
+    </div>
+
+    <div class="carta__cols">
+      <div class="carta__group">
+        <h3 class="carta__cat">Caldos &amp; sopas <span>la especialidad</span></h3>
+
+        <ul class="menu">
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Caldo de gallina</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 18</span>
+            </div>
+            <p class="menu__desc">Presa de gallina, fideos, huevo, papa amarilla y culantro.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Sopa criolla</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 16</span>
+            </div>
+            <p class="menu__desc">Carne, fideos cabello de ángel, leche, ají panca y huevo.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Aguadito de pollo</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 15</span>
+            </div>
+            <p class="menu__desc">Pollo, arroz verde, culantro y arvejas. El clásico levanta muertos.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Sopa a la minuta</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 14</span>
+            </div>
+            <p class="menu__desc">Carne molida, leche, fideos y tomate. Lista en un minuto.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Menestrón</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 16</span>
+            </div>
+            <p class="menu__desc">Verduras, fideos, albahaca fresca y queso.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Dieta de pollo</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 14</span>
+            </div>
+            <p class="menu__desc">Pechuga, fideos, zanahoria y apio. Suave y reconfortante.</p>
+          </li>
+        </ul>
+      </div>
+
+      <div class="carta__group">
+        <h3 class="carta__cat">De olla grande <span>para compartir</span></h3>
+
+        <ul class="menu">
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Chupe de camarones</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 32</span>
+            </div>
+            <p class="menu__desc">Camarones, huevo, queso, leche y papa. El engreído de la casa.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Parihuela</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 34</span>
+            </div>
+            <p class="menu__desc">Mariscos, pescado y caldo concentrado con ají panca.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Sancochado</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 22</span>
+            </div>
+            <p class="menu__desc">Carne, yuca, choclo, camote y col. Un almuerzo entero en un plato.</p>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Shámbar</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 20</span>
+            </div>
+            <p class="menu__desc">Trigo, menestras, jamón y cerdo. <em>Solo los lunes.</em></p>
+          </li>
+        </ul>
+
+        <h3 class="carta__cat carta__cat--tight">Para acompañar &amp; postres</h3>
+        <ul class="menu menu--compact">
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Seco de res con frejoles</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 22</span>
+            </div>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Chicha morada · jarra</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 12</span>
+            </div>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Emoliente</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 6</span>
+            </div>
+          </li>
+          <li class="menu__item">
+            <div class="menu__row">
+              <span class="menu__name">Arroz con leche &amp; mazamorra</span>
+              <span class="menu__leader" aria-hidden="true"></span>
+              <span class="menu__price">S/ 9</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ SOPA DEL DÍA ============================ -->
+  <section class="today enamel" id="sopa-del-dia" aria-labelledby="today-title">
+    <div class="today__head">
+      <p class="eyebrow eyebrow--light">Cada día, su olla</p>
+      <h2 class="section-title section-title--light" id="today-title">La sopa de cada día</h2>
+      <p class="section-lede section-lede--light">Un caldo distinto para cada día de la semana. El de hoy va marcado.</p>
+    </div>
+
+    <ol class="week" role="list">
+      <li class="week__day" data-day="1"><span class="week__d">Lun</span><span class="week__s">Shámbar</span></li>
+      <li class="week__day" data-day="2"><span class="week__d">Mar</span><span class="week__s">Sopa criolla</span></li>
+      <li class="week__day" data-day="3"><span class="week__d">Mié</span><span class="week__s">Sancochado</span></li>
+      <li class="week__day" data-day="4"><span class="week__d">Jue</span><span class="week__s">Menestrón</span></li>
+      <li class="week__day" data-day="5"><span class="week__d">Vie</span><span class="week__s">Chupe de camarones</span></li>
+      <li class="week__day" data-day="6"><span class="week__d">Sáb</span><span class="week__s">Caldo de gallina</span></li>
+      <li class="week__day" data-day="0"><span class="week__d">Dom</span><span class="week__s">Aguadito de pollo</span></li>
+    </ol>
+  </section>
+
+  <!-- ============================ NOSOTROS ============================ -->
+  <section class="about" id="nosotros" aria-labelledby="about-title">
+    <div class="about__text reveal">
+      <p class="eyebrow">Desde la Marina</p>
+      <h2 class="section-title" id="about-title">Una olla que no se apaga</h2>
+      <p>
+        La Casa de las Sopas nació con una idea simple: que en San Miguel
+        nunca falte un buen caldo. Empezamos con dos ollas de peltre y la
+        receta de la abuela, y hasta hoy seguimos con las mismas manos
+        cuidando el fondo desde antes de que salga el sol.
+      </p>
+      <p>
+        No hay secreto ni truco: tiempo, presa buena y culantro fresco. Ven,
+        siéntate y déjate llevar por el vapor.
+      </p>
+      <a class="btn btn--dark" href="#reservar">Aparta tu mesa</a>
+    </div>
+
+    <div class="about__gallery" aria-label="Fotos del restaurante">
+      <!-- REEMPLAZAR cada marcador por una <img src="assets/foto.jpg" alt="..."> -->
+      <div class="dish-photo dish-photo--a" role="img" aria-label="Caldo de gallina humeante">
+        <span>Caldo de gallina</span>
+      </div>
+      <div class="dish-photo dish-photo--b" role="img" aria-label="Olla de peltre en la cocina">
+        <span>La cocina</span>
+      </div>
+      <div class="dish-photo dish-photo--c" role="img" aria-label="Chupe de camarones servido">
+        <span>Chupe de camarones</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ VISÍTANOS ============================ -->
+  <section class="visit" id="visitanos" aria-labelledby="visit-title">
+    <div class="visit__info reveal">
+      <p class="eyebrow">Visítanos</p>
+      <h2 class="section-title" id="visit-title">Te esperamos con la olla lista</h2>
+
+      <dl class="facts">
+        <div class="facts__row">
+          <dt>Dirección</dt>
+          <dd>Av. de la Marina 1541<br>San Miguel 15086, Lima</dd>
+        </div>
+        <div class="facts__row">
+          <dt>Horario</dt>
+          <!-- REEMPLAZAR: confirma tus horarios reales -->
+          <dd>Lunes a domingo<br>8:00 a. m. – 5:00 p. m.</dd>
+        </div>
+        <div class="facts__row">
+          <dt>Reservas</dt>
+          <!-- REEMPLAZAR: pon tu teléfono / WhatsApp real -->
+          <dd><a href="tel:+5100000000">(01) 000-0000</a><br><a href="#reservar">Reserva en línea</a></dd>
+        </div>
+      </dl>
+
+      <a class="btn btn--dark" target="_blank" rel="noopener"
+         href="https://www.google.com/maps/search/?api=1&query=Av.+de+la+Marina+1541+San+Miguel+15086+Lima">
+        Cómo llegar
+      </a>
+    </div>
+
+    <div class="visit__map reveal">
+      <!-- El mapa se carga en el navegador del visitante -->
+      <iframe
+        title="Ubicación de La Casa de las Sopas en el mapa"
+        src="https://www.google.com/maps?q=Av.+de+la+Marina+1541,+San+Miguel+15086,+Lima&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </section>
+
+  <!-- ============================ RESERVAR ============================ -->
+  <section class="reserve enamel" id="reservar" aria-labelledby="reserve-title">
+    <div class="reserve__inner">
+      <div class="reserve__intro">
+        <p class="eyebrow eyebrow--light">Reservar</p>
+        <h2 class="section-title section-title--light" id="reserve-title">Aparta tu mesa</h2>
+        <p class="section-lede section-lede--light">
+          Cuéntanos cuándo vienes y para cuántos. Te confirmamos por teléfono
+          o WhatsApp.
+        </p>
+      </div>
+
+      <form class="rform" novalidate>
+        <div class="rform__field">
+          <label for="r-name">Nombre</label>
+          <input id="r-name" name="name" type="text" autocomplete="name" required placeholder="Tu nombre">
+          <small class="rform__error" data-error-for="r-name"></small>
+        </div>
+
+        <div class="rform__field">
+          <label for="r-phone">Teléfono</label>
+          <input id="r-phone" name="phone" type="tel" autocomplete="tel" required placeholder="9xx xxx xxx">
+          <small class="rform__error" data-error-for="r-phone"></small>
+        </div>
+
+        <div class="rform__field">
+          <label for="r-date">Fecha</label>
+          <input id="r-date" name="date" type="date" required>
+          <small class="rform__error" data-error-for="r-date"></small>
+        </div>
+
+        <div class="rform__field">
+          <label for="r-time">Hora</label>
+          <input id="r-time" name="time" type="time" required value="13:00">
+          <small class="rform__error" data-error-for="r-time"></small>
+        </div>
+
+        <div class="rform__field">
+          <label for="r-guests">Personas</label>
+          <select id="r-guests" name="guests" required>
+            <option value="1">1 persona</option>
+            <option value="2" selected>2 personas</option>
+            <option value="3">3 personas</option>
+            <option value="4">4 personas</option>
+            <option value="5">5 personas</option>
+            <option value="6">6 personas</option>
+            <option value="7+">7 o más</option>
+          </select>
+        </div>
+
+        <div class="rform__field rform__field--wide">
+          <label for="r-notes">Notas <span>(opcional)</span></label>
+          <input id="r-notes" name="notes" type="text" placeholder="Trona para bebé, cumpleaños, mesa cerca de la ventana…">
+        </div>
+
+        <div class="rform__actions">
+          <button class="btn btn--gold" type="submit">Enviar solicitud</button>
+          <p class="rform__note" role="status" aria-live="polite" data-form-status></p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="foot">
+    <div class="foot__brand">
+      <span class="brand__text brand__text--foot">La Casa de las Sopas</span>
+      <p>Caldos y sopas caseras en el corazón de San Miguel.</p>
+    </div>
+    <div class="foot__col">
+      <h4>Dónde</h4>
+      <p>Av. de la Marina 1541<br>San Miguel 15086, Lima</p>
+    </div>
+    <div class="foot__col">
+      <h4>Horario</h4>
+      <p>Lun – Dom<br>8:00 a. m. – 5:00 p. m.</p>
+    </div>
+    <div class="foot__col">
+      <h4>Síguenos</h4>
+      <!-- REEMPLAZAR: enlaces reales de redes -->
+      <p>
+        <a href="#" aria-label="Facebook">Facebook</a><br>
+        <a href="#" aria-label="Instagram">Instagram</a><br>
+        <a href="#" aria-label="WhatsApp">WhatsApp</a>
+      </p>
+    </div>
+    <p class="foot__legal">© <span data-year>2026</span> La Casa de las Sopas · Hecho con caldo en San Miguel.</p>
+  </footer>
+</main>
+
+<script src="script.js" defer></script>
+</body>
+</html>
