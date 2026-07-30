@@ -16,7 +16,7 @@
    ============================================================ */
 
 /* ---- Config general (EDITAR) ---- */
-const MOSTRAR_PRECIOS = false;                 // ← pon true cuando quieras mostrar precios
+const MOSTRAR_PRECIOS = true;                  // ← precios visibles
 const WHATSAPP_NUMERO = '51999999999';         // ← EDITAR: número real (51 + celular)
 const MONEDA = 'S/';
 
@@ -38,11 +38,11 @@ const MENU = [
     icono: '🔥',
     nota: 'Todas nuestras alitas van acompañadas de papas fritas.',
     items: [
-      { nombre: 'Alitas Kusikuy Acevichadas', desc: 'Deliciosas alitas en salsa acevichada + papas fritas.', precio: null, picante: true },
-      { nombre: 'Alitas Kusikuy', desc: 'Sabor de la casa estilo parrillera + papas fritas.', precio: null, picante: true },
-      { nombre: 'Alitas Sauce', desc: 'Mostaza con miel + papas fritas.', precio: null },
-      { nombre: 'Alitas BBQ', desc: 'Salsa agridulce + papas fritas.', precio: null },
-      { nombre: 'Alitas Maracuyá', desc: 'Salsa de maracuyá + papas fritas.', precio: null },
+      { nombre: 'Alitas Kusikuy Acevichadas', desc: 'Deliciosas alitas en salsa acevichada + papas fritas.', precio: 20, picante: true },
+      { nombre: 'Alitas Kusikuy', desc: 'Sabor de la casa estilo parrillera + papas fritas.', precio: 19, picante: true },
+      { nombre: 'Alitas Sauce', desc: 'Mostaza con miel + papas fritas.', precio: 19 },
+      { nombre: 'Alitas BBQ', desc: 'Salsa agridulce + papas fritas.', precio: 19 },
+      { nombre: 'Alitas Maracuyá', desc: 'Salsa de maracuyá + papas fritas.', precio: 19 },
     ],
   },
   {
@@ -50,14 +50,14 @@ const MENU = [
     titulo: 'Salchipapas y Sándwich',
     icono: '🍟',
     items: [
-      { nombre: 'Salchipapa', desc: 'Salchicha y papas fritas.', precio: null },
-      { nombre: 'Nuggets (6)', desc: '6 nuggets crocantes.', precio: null },
-      { nombre: 'Salchi Huevo', desc: 'Salchipapa con huevo.', precio: null },
-      { nombre: 'Salchi Acevichada', desc: 'En salsa acevichada.', precio: null, picante: true },
-      { nombre: 'Salchi Nuggets (4)', desc: 'Con 4 nuggets.', precio: null },
-      { nombre: 'Salchi Nuggets Acevichada', desc: 'Nuggets en salsa acevichada.', precio: null, picante: true },
-      { nombre: 'Salchi Kusikuy', desc: 'Deliciosa salchicha y queso local + papas fritas.', precio: null },
-      { nombre: 'Sándwich', desc: 'Hamburguesa casera de carne o pollo con pan local + papas fritas.', precio: null },
+      { nombre: 'Salchipapa', desc: 'Salchicha y papas fritas.', precio: 10 },
+      { nombre: 'Nuggets (6)', desc: '6 nuggets crocantes.', precio: 10 },
+      { nombre: 'Salchi Huevo', desc: 'Salchipapa con huevo.', precio: 12 },
+      { nombre: 'Salchi Acevichada', desc: 'En salsa acevichada.', precio: 14, picante: true },
+      { nombre: 'Salchi Nuggets (4)', desc: 'Con 4 nuggets.', precio: 15 },
+      { nombre: 'Salchi Nuggets Acevichada', desc: 'Nuggets en salsa acevichada.', precio: 19, picante: true },
+      { nombre: 'Salchi Kusikuy', desc: 'Deliciosa salchicha y queso local + papas fritas.', precio: 12 },
+      { nombre: 'Sándwich', desc: 'Hamburguesa casera de carne o pollo con pan local + papas fritas.', precio: 8 },
     ],
   },
   {
@@ -66,11 +66,11 @@ const MENU = [
     icono: '🥩',
     nota: '+ acompañamiento a elección y ensalada fresca.',
     items: [
-      { nombre: 'Parrilla de Res', variantes: [ { etiqueta: 'Con papas', precio: null }, { etiqueta: 'Con arroz', precio: null } ] },
-      { nombre: 'Chuleta de Cerdo', variantes: [ { etiqueta: 'Con papas', precio: null }, { etiqueta: 'Con arroz', precio: null } ] },
-      { nombre: 'Filete de Pollo', variantes: [ { etiqueta: 'Con papas', precio: null }, { etiqueta: 'Con arroz', precio: null } ] },
-      { nombre: 'Mollejas', precio: null },
-      { nombre: 'Anticucho de Corazón', precio: null },
+      { nombre: 'Parrilla de Res', variantes: [ { etiqueta: 'Con papas', precio: 20 }, { etiqueta: 'Con arroz', precio: 22 } ] },
+      { nombre: 'Chuleta de Cerdo', variantes: [ { etiqueta: 'Con papas', precio: 20 }, { etiqueta: 'Con arroz', precio: 22 } ] },
+      { nombre: 'Filete de Pollo', variantes: [ { etiqueta: 'Con papas', precio: 20 }, { etiqueta: 'Con arroz', precio: 22 } ] },
+      { nombre: 'Mollejas', precio: 18 },
+      { nombre: 'Anticucho de Corazón', precio: 18 },
     ],
   },
   {
@@ -78,12 +78,12 @@ const MENU = [
     titulo: 'Extras',
     icono: '🍽️',
     items: [
-      { nombre: 'Lomo Saltado', precio: null },
-      { nombre: 'Pollo Saltado', precio: null },
-      { nombre: 'Tallarín Saltado de Carne', precio: null },
-      { nombre: 'Tallarín Saltado de Pollo', precio: null },
-      { nombre: 'Lomo Saltado Montado', precio: null },
-      { nombre: 'Sudado de Carne', precio: null },
+      { nombre: 'Lomo Saltado', precio: 20 },
+      { nombre: 'Pollo Saltado', precio: 22 },
+      { nombre: 'Tallarín Saltado de Carne', precio: 20 },
+      { nombre: 'Tallarín Saltado de Pollo', precio: 22 },
+      { nombre: 'Lomo Saltado Montado', precio: 22 },
+      { nombre: 'Sudado de Carne', precio: 18 },
     ],
   },
   {
@@ -91,11 +91,11 @@ const MENU = [
     titulo: 'Bebidas Calientes',
     icono: '☕',
     items: [
-      { nombre: 'Vino Caliente', desc: 'Vino, ron, especias y jugo de naranja.', variantes: [ { etiqueta: 'Personal', precio: null }, { etiqueta: 'Jarra', precio: null } ] },
-      { nombre: 'Huajsapata', desc: 'Vino, pisco, jugo de naranja y especias.', variantes: [ { etiqueta: 'Personal', precio: null }, { etiqueta: 'Jarra', precio: null } ] },
-      { nombre: 'Calientito Kusikuy', desc: 'Frutas exóticas, especias y vodka.', variantes: [ { etiqueta: 'Jarra', precio: null } ] },
-      { nombre: 'Té Piteado', desc: 'Té con canela, clavo, cáscara de naranja, anisado y pisco. Clásico / Uva / Naranja / Durazno.', variantes: [ { etiqueta: 'Jarra', precio: null } ] },
-      { nombre: 'Té Frutado', desc: 'Té de fruta natural con canela y clavo. Fresa / Frutos rojos / Frutos del bosque.', variantes: [ { etiqueta: 'Jarra', precio: null } ] },
+      { nombre: 'Vino Caliente', desc: 'Vino, ron, especias y jugo de naranja.', variantes: [ { etiqueta: 'Personal', precio: 12 }, { etiqueta: 'Jarra', precio: 35 } ] },
+      { nombre: 'Huajsapata', desc: 'Vino, pisco, jugo de naranja y especias.', variantes: [ { etiqueta: 'Personal', precio: 12 }, { etiqueta: 'Jarra', precio: 35 } ] },
+      { nombre: 'Calientito Kusikuy', desc: 'Frutas exóticas, especias y vodka.', variantes: [ { etiqueta: 'Jarra', precio: 35 } ] },
+      { nombre: 'Té Piteado', desc: 'Té con canela, clavo, cáscara de naranja, anisado y pisco. Clásico / Uva / Naranja / Durazno.', variantes: [ { etiqueta: 'Jarra', precio: 35 } ] },
+      { nombre: 'Té Frutado', desc: 'Té de fruta natural con canela y clavo. Fresa / Frutos rojos / Frutos del bosque.', variantes: [ { etiqueta: 'Jarra', precio: 35 } ] },
     ],
   },
   {
@@ -103,8 +103,8 @@ const MENU = [
     titulo: 'Infusiones y Café',
     icono: '🍵',
     items: [
-      { nombre: 'Infusiones', desc: 'Té, manzanilla, hierba luisa, anís, coca, muña, té naranja, té durazno.', precio: null },
-      { nombre: 'Café Pasado', desc: 'Café de grano recién pasado.', precio: null },
+      { nombre: 'Infusiones', desc: 'Té, manzanilla, hierba luisa, anís, coca, muña, té naranja, té durazno.', precio: 4 },
+      { nombre: 'Café Pasado', desc: 'Café de grano recién pasado.', precio: 6 },
     ],
   },
   {
@@ -112,10 +112,10 @@ const MENU = [
     titulo: 'Jugos',
     icono: '🧃',
     items: [
-      { nombre: 'Limonada', variantes: [ { etiqueta: 'Vaso', precio: null }, { etiqueta: 'Jarra', precio: null } ] },
-      { nombre: 'Maracuyá', variantes: [ { etiqueta: 'Vaso', precio: null }, { etiqueta: 'Jarra', precio: null } ] },
-      { nombre: 'Chicha Morada', variantes: [ { etiqueta: 'Vaso', precio: null }, { etiqueta: 'Jarra', precio: null } ] },
-      { nombre: 'Piña', variantes: [ { etiqueta: 'Vaso', precio: null }, { etiqueta: 'Jarra', precio: null } ] },
+      { nombre: 'Limonada', variantes: [ { etiqueta: 'Vaso', precio: 10 }, { etiqueta: 'Jarra', precio: 20 } ] },
+      { nombre: 'Maracuyá', variantes: [ { etiqueta: 'Vaso', precio: 8 }, { etiqueta: 'Jarra', precio: 15 } ] },
+      { nombre: 'Chicha Morada', variantes: [ { etiqueta: 'Vaso', precio: 8 }, { etiqueta: 'Jarra', precio: 15 } ] },
+      { nombre: 'Piña', variantes: [ { etiqueta: 'Vaso', precio: 8 }, { etiqueta: 'Jarra', precio: 15 } ] },
     ],
   },
   {
@@ -123,11 +123,11 @@ const MENU = [
     titulo: 'Gaseosas y Agua',
     icono: '🥤',
     items: [
-      { nombre: 'Coca Cola', variantes: [ { etiqueta: '500 ml', precio: null }, { etiqueta: '1 L', precio: null }, { etiqueta: '2.5 L', precio: null } ] },
-      { nombre: 'Inca Kola', variantes: [ { etiqueta: '500 ml', precio: null }, { etiqueta: '1 L', precio: null }, { etiqueta: '2.5 L', precio: null } ] },
-      { nombre: 'Fanta', variantes: [ { etiqueta: '500 ml', precio: null } ] },
-      { nombre: 'Sprite', variantes: [ { etiqueta: '500 ml', precio: null } ] },
-      { nombre: 'Agua', variantes: [ { etiqueta: '500 ml', precio: null } ] },
+      { nombre: 'Coca Cola', variantes: [ { etiqueta: '500 ml', precio: 4 }, { etiqueta: '1 L', precio: 7 }, { etiqueta: '2.5 L', precio: 12 } ] },
+      { nombre: 'Inca Kola', variantes: [ { etiqueta: '500 ml', precio: 4 }, { etiqueta: '1 L', precio: 7 }, { etiqueta: '2.5 L', precio: 12 } ] },
+      { nombre: 'Fanta', variantes: [ { etiqueta: '500 ml', precio: 4 } ] },
+      { nombre: 'Sprite', variantes: [ { etiqueta: '500 ml', precio: 4 } ] },
+      { nombre: 'Agua', variantes: [ { etiqueta: '500 ml', precio: 3 } ] },
     ],
   },
 ];
