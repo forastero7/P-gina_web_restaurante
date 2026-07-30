@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kusikuy Dark Kitchen — Alitas, Parrillas y Bebidas</title>
+  <meta name="description" content="Kusikuy Dark Kitchen: alitas picantes, salchipapas, parrillas y bebidas. Pide por WhatsApp o visítanos en nuestro local. ¡Pide tus alitas favoritas picantes! 🔥" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Kusikuy Dark Kitchen" />
+  <meta property="og:description" content="Alitas picantes, parrillas y bebidas. Pide por WhatsApp o visítanos." />
+  <meta property="og:type" content="restaurant" />
+
+  <!-- Fuentes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%94%A5%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <!-- ===== HEADER / NAV ===== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Kusikuy Dark Kitchen — inicio">
+        <span class="brand-flame">🔥</span>
+        <span class="brand-text">
+          <span class="brand-kusi">Kusi</span><span class="brand-kuy">Kuy</span>
+          <span class="brand-sub">Dark Kitchen</span>
+        </span>
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#menu" class="nav-link">Menú</a>
+        <a href="#reservas" class="nav-link">Reservas</a>
+        <a href="#local" class="nav-link">Local</a>
+        <a href="#" class="nav-link nav-pedir" data-open-cart>Pedir 🛒</a>
+      </nav>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="container hero-inner">
+      <p class="hero-eyebrow">🔥 Dark Kitchen · Local presencial</p>
+      <h1 class="hero-title">
+        <span class="hero-kusi">Kusi</span><span class="hero-kuy">Kuy</span>
+        <span class="hero-dk">Dark Kitchen</span>
+      </h1>
+      <p class="hero-tagline">Pide tus <strong>alitas favoritas picantes</strong> 🔥 · Parrillas, salchipapas y bebidas para llevar o disfrutar en el local.</p>
+      <div class="hero-cta">
+        <a href="#menu" class="btn btn-primary">Ver el menú</a>
+        <a href="#" class="btn btn-whatsapp" data-open-cart>Pedir por WhatsApp</a>
+      </div>
+      <ul class="hero-badges">
+        <li>🍗 Alitas en 5 salsas</li>
+        <li>🥩 Parrillas</li>
+        <li>🚴 Delivery por WhatsApp</li>
+        <li>🍽️ Local presencial</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== MENÚ ===== -->
+  <section class="section" id="menu">
+    <div class="container">
+      <header class="section-head">
+        <h2 class="section-title">Nuestro <span class="accent">Menú</span></h2>
+        <p class="section-desc">Toca <strong>Agregar</strong> en lo que quieras y arma tu pedido. Al final lo envías por WhatsApp. 🔥</p>
+      </header>
+
+      <!-- Filtros de categoría -->
+      <div class="menu-tabs" id="menuTabs" role="tablist" aria-label="Categorías del menú"></div>
+
+      <!-- Contenido del menú (render por JS) -->
+      <div id="menuRoot" class="menu-root"></div>
+    </div>
+  </section>
+
+  <!-- ===== RESERVAS ===== -->
+  <section class="section section-alt" id="reservas">
+    <div class="container reservas-grid">
+      <div class="reservas-copy">
+        <h2 class="section-title">Reserva tu <span class="accent">mesa</span></h2>
+        <p class="section-desc">¿Vienes al local? Reserva y te esperamos con todo listo. Completa el formulario y se envía directo a nuestro WhatsApp.</p>
+        <ul class="reservas-points">
+          <li>✅ Confirmación rápida por WhatsApp</li>
+          <li>👨‍👩‍👧‍👦 Ideal para grupos y celebraciones</li>
+          <li>🔥 Pide tus alitas picantes con anticipación</li>
+        </ul>
+      </div>
+
+      <form class="reserva-form card" id="reservaForm" novalidate>
+        <div class="field">
+          <label for="rName">Nombre</label>
+          <input type="text" id="rName" name="nombre" placeholder="Tu nombre" required />
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="rDate">Fecha</label>
+            <input type="date" id="rDate" name="fecha" required />
+          </div>
+          <div class="field">
+            <label for="rTime">Hora</label>
+            <input type="time" id="rTime" name="hora" required />
+          </div>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="rPeople">N.º de personas</label>
+            <input type="number" id="rPeople" name="personas" min="1" max="30" value="2" required />
+          </div>
+          <div class="field">
+            <label for="rPhone">Tu teléfono <span class="opt">(opcional)</span></label>
+            <input type="tel" id="rPhone" name="telefono" placeholder="999 999 999" />
+          </div>
+        </div>
+        <div class="field">
+          <label for="rNotes">Notas <span class="opt">(opcional)</span></label>
+          <textarea id="rNotes" name="notas" rows="2" placeholder="Cumpleaños, mesa cerca a la ventana, etc."></textarea>
+        </div>
+        <p class="form-error" id="reservaError" hidden></p>
+        <button type="submit" class="btn btn-whatsapp btn-block">Reservar por WhatsApp</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== LOCAL PRESENCIAL ===== -->
+  <section class="section" id="local">
+    <div class="container local-grid">
+      <div class="local-info">
+        <h2 class="section-title">Visítanos en el <span class="accent">local</span></h2>
+        <ul class="local-list">
+          <li>
+            <span class="local-ico">📍</span>
+            <div>
+              <strong>Dirección</strong>
+              <p><!-- EDITAR: dirección exacta -->Av. Ejemplo 123, tu distrito, tu ciudad</p>
+            </div>
+          </li>
+          <li>
+            <span class="local-ico">🕒</span>
+            <div>
+              <strong>Horario</strong>
+              <p><!-- EDITAR: horarios -->Lun a Dom · 5:00 p.m. – 11:00 p.m.</p>
+            </div>
+          </li>
+          <li>
+            <span class="local-ico">📞</span>
+            <div>
+              <strong>WhatsApp / Pedidos</strong>
+              <p><a id="localWhatsapp" href="#">Escríbenos por WhatsApp</a></p>
+            </div>
+          </li>
+          <li>
+            <span class="local-ico">📱</span>
+            <div>
+              <strong>Síguenos</strong>
+              <p class="local-social">
+                <!-- EDITAR: enlaces de redes -->
+                <a href="#" target="_blank" rel="noopener">Instagram</a> ·
+                <a href="#" target="_blank" rel="noopener">Facebook</a> ·
+                <a href="#" target="_blank" rel="noopener">TikTok</a>
+              </p>
+            </div>
+          </li>
+        </ul>
+        <a id="comoLlegar" class="btn btn-primary" href="https://maps.app.goo.gl/ksJ84mwEpHF5Vq9p9" target="_blank" rel="noopener">Cómo llegar 🗺️</a>
+      </div>
+
+      <div class="local-map card">
+        <!-- Mapa incrustado. Reemplaza el src del iframe por el "embed" real de tu local
+             (Google Maps → Compartir → Insertar un mapa). El botón "Cómo llegar" usa tu enlace real. -->
+        <iframe
+          title="Ubicación de Kusikuy Dark Kitchen"
+          src="https://www.google.com/maps?q=Lima%2C%20Peru&output=embed"
+          width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="brand-kusi">Kusi</span><span class="brand-kuy">Kuy</span>
+        <span class="brand-sub">Dark Kitchen</span>
+        <p class="footer-note">🔥 Pide tus alitas favoritas picantes</p>
+      </div>
+      <nav class="footer-links">
+        <a href="#menu">Menú</a>
+        <a href="#reservas">Reservas</a>
+        <a href="#local">Local</a>
+        <a href="#" data-open-cart>Pedir</a>
+      </nav>
+      <p class="footer-legal">
+        © <span id="year"></span> Kusikuy Dark Kitchen · A&amp;S Grupo Empresarial<br />
+        Hecho con 🔥 para los amantes de las alitas.
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===== BOTÓN FLOTANTE WHATSAPP ===== -->
+  <a class="fab-whatsapp" id="fabWhatsapp" href="#" aria-label="Escribir por WhatsApp">
+    <svg viewBox="0 0 32 32" width="28" height="28" aria-hidden="true"><path fill="currentColor" d="M16.04 4C9.9 4 4.9 9 4.9 15.14c0 2.16.63 4.17 1.72 5.87L4.5 28l7.16-2.06a11.1 11.1 0 0 0 4.38.9h.01c6.14 0 11.14-5 11.14-11.14C27.18 9 22.18 4 16.04 4zm0 20.4h-.01a9.2 9.2 0 0 1-4.68-1.28l-.34-.2-3.98 1.14 1.16-3.88-.22-.36a9.26 9.26 0 0 1-1.42-4.9c0-5.1 4.16-9.25 9.28-9.25 2.48 0 4.8.97 6.55 2.72a9.2 9.2 0 0 1 2.72 6.55c0 5.11-4.16 9.26-9.28 9.26zm5.09-6.93c-.28-.14-1.65-.81-1.9-.9-.26-.1-.44-.14-.63.14-.19.28-.72.9-.89 1.09-.16.19-.33.21-.61.07-.28-.14-1.18-.44-2.25-1.39-.83-.74-1.39-1.65-1.55-1.93-.16-.28-.02-.43.12-.57.13-.13.28-.33.42-.5.14-.16.19-.28.28-.47.09-.19.05-.35-.02-.5-.07-.14-.63-1.51-.86-2.07-.23-.55-.46-.47-.63-.48l-.54-.01c-.19 0-.5.07-.76.35-.26.28-1 .97-1 2.37 0 1.39 1.02 2.74 1.16 2.93.14.19 2.01 3.06 4.87 4.29.68.29 1.21.47 1.62.6.68.22 1.3.19 1.79.11.55-.08 1.65-.67 1.89-1.32.23-.65.23-1.2.16-1.32-.07-.12-.26-.19-.54-.33z"/></svg>
+  </a>
+
+  <!-- ===== PANEL / CARRITO ===== -->
+  <div class="cart-overlay" id="cartOverlay" hidden></div>
+  <aside class="cart-panel" id="cartPanel" aria-label="Tu pedido" aria-hidden="true">
+    <header class="cart-head">
+      <h3>Tu pedido 🛒</h3>
+      <button class="cart-close" id="cartClose" aria-label="Cerrar">✕</button>
+    </header>
+    <div class="cart-body" id="cartBody">
+      <p class="cart-empty" id="cartEmpty">Tu pedido está vacío. Agrega algo del menú 🔥</p>
+      <ul class="cart-items" id="cartItems"></ul>
+    </div>
+    <footer class="cart-foot">
+      <div class="cart-total" id="cartTotal" hidden>
+        <span>Total</span>
+        <strong id="cartTotalValue">S/ 0.00</strong>
+      </div>
+      <p class="cart-hint" id="cartHint">Confirmamos el total contigo por WhatsApp.</p>
+      <button class="btn btn-whatsapp btn-block" id="cartSend" disabled>Enviar pedido por WhatsApp</button>
+    </footer>
+  </aside>
+
+  <!-- Botón flotante del carrito con contador -->
+  <button class="fab-cart" id="fabCart" data-open-cart aria-label="Ver tu pedido">
+    🛒 <span class="fab-cart-count" id="cartCount">0</span>
+  </button>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/menu-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
