@@ -1,0 +1,48 @@
+name: Deploy a GitHub Pages
+
+# Publica el sitio estático (raíz del repo) en GitHub Pages.
+# Cómo activarlo (una sola vez):
+#   Settings -> Pages -> Build and deployment -> Source: "GitHub Actions".
+# Después, cada push a las ramas de abajo publica automáticamente.
+# También puedes lanzarlo a mano desde la pestaña "Actions" (Run workflow).
+
+on:
+  push:
+    branches:
+      - claude/kusikuy-dark-kitchen-web-d8ymlq
+      - main
+      - master
+  workflow_dispatch:
+
+# Permisos que necesita el despliegue a Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Evita despliegues solapados; deja terminar el que está en curso
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Configurar Pages
+        uses: actions/configure-pages@v5
+
+      - name: Subir artefacto del sitio (raíz del repo)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      - name: Desplegar a GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

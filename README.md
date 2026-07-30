@@ -53,9 +53,28 @@ python3 -m http.server 8000
 ```
 
 ## 🚀 Publicar gratis (GitHub Pages)
-1. Sube el repo a GitHub.
-2. **Settings → Pages → Build and deployment → Deploy from a branch**.
-3. Elige la rama y carpeta `/root`, guarda. En 1–2 min tendrás una URL pública.
+
+El repo ya incluye un workflow (`.github/workflows/deploy-pages.yml`) que publica
+el sitio automáticamente. Solo tienes que activarlo **una vez**:
+
+### Método recomendado (automático, con GitHub Actions)
+1. En GitHub, entra a tu repositorio → **Settings** (Configuración).
+2. En el menú izquierdo, **Pages**.
+3. En **Build and deployment → Source**, elige **GitHub Actions**.
+4. ¡Listo! Cada vez que hagas *push* a la rama `claude/kusikuy-dark-kitchen-web-d8ymlq`
+   (o a `main`/`master`) el sitio se publica solo.
+   - Puedes ver el progreso y la URL en la pestaña **Actions**.
+   - También puedes publicar a mano: **Actions → Deploy a GitHub Pages → Run workflow**.
+
+La URL pública será algo como:
+`https://forastero7.github.io/P-gina_web_restaurante/`
+
+### Método alternativo (sin Actions)
+Si prefieres no usar Actions: **Settings → Pages → Source: Deploy from a branch**,
+elige la rama y la carpeta **/(root)**, guarda. En 1–2 min tendrás la URL.
+
+> El archivo `.nojekyll` ya está incluido para que GitHub Pages sirva bien todos
+> los archivos (CSS/JS) sin procesarlos con Jekyll.
 
 ## ✅ Funciona así
 - **Pedido:** el cliente toca “Agregar”, arma su carrito y pulsa
