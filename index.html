@@ -33,15 +33,20 @@
       </a>
 
       <nav class="nav" id="nav">
-        <a href="#menu" class="nav-link">Menú</a>
-        <a href="#reservas" class="nav-link">Reservas</a>
-        <a href="#local" class="nav-link">Local</a>
-        <a href="#" class="nav-link nav-pedir" data-open-cart>Pedir 🛒</a>
+        <a href="#menu" class="nav-link" data-i18n="nav.menu">Menú</a>
+        <a href="#reservas" class="nav-link" data-i18n="nav.reservas">Reservas</a>
+        <a href="#local" class="nav-link" data-i18n="nav.local">Local</a>
+        <a href="#" class="nav-link nav-pedir" data-open-cart data-i18n="nav.pedir">Pedir 🛒</a>
       </nav>
 
-      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
-        <span></span><span></span><span></span>
-      </button>
+      <div class="header-actions">
+        <button class="lang-toggle" id="langToggle" aria-label="Change language / Cambiar idioma">
+          <span aria-hidden="true">🌐</span> <span id="langLabel">EN</span>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú de navegación" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -49,21 +54,21 @@
   <section class="hero">
     <div class="hero-glow"></div>
     <div class="container hero-inner">
-      <p class="hero-eyebrow">🔥 Dark Kitchen · Local presencial</p>
+      <p class="hero-eyebrow" data-i18n="hero.eyebrow">🔥 Dark Kitchen · Local presencial</p>
       <h1 class="hero-title">
         <span class="hero-kusi">Kusi</span><span class="hero-kuy">Kuy</span>
         <span class="hero-dk">Dark Kitchen</span>
       </h1>
-      <p class="hero-tagline">Pide tus <strong>alitas favoritas picantes</strong> 🔥 · Parrillas, salchipapas y bebidas para llevar o disfrutar en el local.</p>
+      <p class="hero-tagline" data-i18n-html="hero.tagline">Pide tus <strong>alitas favoritas picantes</strong> 🔥 · Parrillas, salchipapas y bebidas para llevar o disfrutar en el local.</p>
       <div class="hero-cta">
-        <a href="#menu" class="btn btn-primary">Ver el menú</a>
-        <a href="#" class="btn btn-whatsapp" data-open-cart>Pedir por WhatsApp</a>
+        <a href="#menu" class="btn btn-primary" data-i18n="hero.cta.menu">Ver el menú</a>
+        <a href="#" class="btn btn-whatsapp" data-open-cart data-i18n="hero.cta.order">Pedir por WhatsApp</a>
       </div>
       <ul class="hero-badges">
-        <li>🍗 Alitas en 5 salsas</li>
-        <li>🥩 Parrillas</li>
-        <li>🚴 Delivery por WhatsApp</li>
-        <li>🍽️ Local presencial</li>
+        <li data-i18n="hero.badge.1">🍗 Alitas en 5 salsas</li>
+        <li data-i18n="hero.badge.2">🥩 Parrillas</li>
+        <li data-i18n="hero.badge.3">🚴 Delivery por WhatsApp</li>
+        <li data-i18n="hero.badge.4">🍽️ Local presencial</li>
       </ul>
     </div>
   </section>
@@ -72,8 +77,8 @@
   <section class="section" id="menu">
     <div class="container">
       <header class="section-head">
-        <h2 class="section-title">Nuestro <span class="accent">Menú</span></h2>
-        <p class="section-desc">Toca <strong>Agregar</strong> en lo que quieras y arma tu pedido. Al final lo envías por WhatsApp. 🔥</p>
+        <h2 class="section-title" data-i18n-html="menu.title">Nuestro <span class="accent">Menú</span></h2>
+        <p class="section-desc" data-i18n-html="menu.desc">Toca <strong>Agregar</strong> en lo que quieras y arma tu pedido. Al final lo envías por WhatsApp. 🔥</p>
       </header>
 
       <!-- Filtros de categoría -->
@@ -88,46 +93,46 @@
   <section class="section section-alt" id="reservas">
     <div class="container reservas-grid">
       <div class="reservas-copy">
-        <h2 class="section-title">Reserva tu <span class="accent">mesa</span></h2>
-        <p class="section-desc">¿Vienes al local? Reserva y te esperamos con todo listo. Completa el formulario y se envía directo a nuestro WhatsApp.</p>
+        <h2 class="section-title" data-i18n-html="reservas.title">Reserva tu <span class="accent">mesa</span></h2>
+        <p class="section-desc" data-i18n="reservas.desc">¿Vienes al local? Reserva y te esperamos con todo listo. Completa el formulario y se envía directo a nuestro WhatsApp.</p>
         <ul class="reservas-points">
-          <li>✅ Confirmación rápida por WhatsApp</li>
-          <li>👨‍👩‍👧‍👦 Ideal para grupos y celebraciones</li>
-          <li>🔥 Pide tus alitas picantes con anticipación</li>
+          <li data-i18n="reservas.point.1">✅ Confirmación rápida por WhatsApp</li>
+          <li data-i18n="reservas.point.2">👨‍👩‍👧‍👦 Ideal para grupos y celebraciones</li>
+          <li data-i18n="reservas.point.3">🔥 Pide tus alitas picantes con anticipación</li>
         </ul>
       </div>
 
       <form class="reserva-form card" id="reservaForm" novalidate>
         <div class="field">
-          <label for="rName">Nombre</label>
-          <input type="text" id="rName" name="nombre" placeholder="Tu nombre" required />
+          <label for="rName" data-i18n="form.nombre">Nombre</label>
+          <input type="text" id="rName" name="nombre" placeholder="Tu nombre" data-i18n-ph="form.nombre.ph" required />
         </div>
         <div class="field-row">
           <div class="field">
-            <label for="rDate">Fecha</label>
+            <label for="rDate" data-i18n="form.fecha">Fecha</label>
             <input type="date" id="rDate" name="fecha" required />
           </div>
           <div class="field">
-            <label for="rTime">Hora</label>
+            <label for="rTime" data-i18n="form.hora">Hora</label>
             <input type="time" id="rTime" name="hora" required />
           </div>
         </div>
         <div class="field-row">
           <div class="field">
-            <label for="rPeople">N.º de personas</label>
+            <label for="rPeople" data-i18n="form.personas">N.º de personas</label>
             <input type="number" id="rPeople" name="personas" min="1" max="30" value="2" required />
           </div>
           <div class="field">
-            <label for="rPhone">Tu teléfono <span class="opt">(opcional)</span></label>
+            <label for="rPhone" data-i18n-html="form.telefono">Tu teléfono <span class="opt">(opcional)</span></label>
             <input type="tel" id="rPhone" name="telefono" placeholder="999 999 999" />
           </div>
         </div>
         <div class="field">
-          <label for="rNotes">Notas <span class="opt">(opcional)</span></label>
-          <textarea id="rNotes" name="notas" rows="2" placeholder="Cumpleaños, mesa cerca a la ventana, etc."></textarea>
+          <label for="rNotes" data-i18n-html="form.notas">Notas <span class="opt">(opcional)</span></label>
+          <textarea id="rNotes" name="notas" rows="2" placeholder="Cumpleaños, mesa cerca a la ventana, etc." data-i18n-ph="form.notas.ph"></textarea>
         </div>
         <p class="form-error" id="reservaError" hidden></p>
-        <button type="submit" class="btn btn-whatsapp btn-block">Reservar por WhatsApp</button>
+        <button type="submit" class="btn btn-whatsapp btn-block" data-i18n="form.submit">Reservar por WhatsApp</button>
       </form>
     </div>
   </section>
@@ -136,33 +141,33 @@
   <section class="section" id="local">
     <div class="container local-grid">
       <div class="local-info">
-        <h2 class="section-title">Visítanos en el <span class="accent">local</span></h2>
+        <h2 class="section-title" data-i18n-html="local.title">Visítanos en el <span class="accent">local</span></h2>
         <ul class="local-list">
           <li>
             <span class="local-ico">📍</span>
             <div>
-              <strong>Dirección</strong>
+              <strong data-i18n="local.address">Dirección</strong>
               <p>Jorge Chávez 234, Juliaca 21104</p>
             </div>
           </li>
           <li>
             <span class="local-ico">🕒</span>
             <div>
-              <strong>Horario</strong>
-              <p>Lun a Dom · 4:30 p.m. – 11:00 p.m.</p>
+              <strong data-i18n="local.hours">Horario</strong>
+              <p data-i18n="local.hours.value">Lun a Dom · 4:30 p.m. – 11:00 p.m.</p>
             </div>
           </li>
           <li>
             <span class="local-ico">📞</span>
             <div>
-              <strong>WhatsApp / Pedidos</strong>
-              <p><a id="localWhatsapp" href="#">Escríbenos por WhatsApp</a></p>
+              <strong data-i18n="local.whatsapp">WhatsApp / Pedidos</strong>
+              <p><a id="localWhatsapp" href="#" data-i18n="local.whatsapp.link">Escríbenos por WhatsApp</a></p>
             </div>
           </li>
           <li>
             <span class="local-ico">📱</span>
             <div>
-              <strong>Síguenos</strong>
+              <strong data-i18n="local.follow">Síguenos</strong>
               <p class="local-social">
                 <!-- EDITAR: enlaces de redes -->
                 <a href="#" target="_blank" rel="noopener">Instagram</a> ·
@@ -172,7 +177,7 @@
             </div>
           </li>
         </ul>
-        <a id="comoLlegar" class="btn btn-primary" href="https://maps.app.goo.gl/ksJ84mwEpHF5Vq9p9" target="_blank" rel="noopener">Cómo llegar 🗺️</a>
+        <a id="comoLlegar" class="btn btn-primary" href="https://maps.app.goo.gl/ksJ84mwEpHF5Vq9p9" target="_blank" rel="noopener" data-i18n="local.directions">Cómo llegar 🗺️</a>
       </div>
 
       <div class="local-map card">
@@ -193,17 +198,17 @@
       <div class="footer-brand">
         <span class="brand-kusi">Kusi</span><span class="brand-kuy">Kuy</span>
         <span class="brand-sub">Dark Kitchen</span>
-        <p class="footer-note">🔥 Pide tus alitas favoritas picantes</p>
+        <p class="footer-note" data-i18n="footer.note">🔥 Pide tus alitas favoritas picantes</p>
       </div>
       <nav class="footer-links">
-        <a href="#menu">Menú</a>
-        <a href="#reservas">Reservas</a>
-        <a href="#local">Local</a>
-        <a href="#" data-open-cart>Pedir</a>
+        <a href="#menu" data-i18n="nav.menu">Menú</a>
+        <a href="#reservas" data-i18n="nav.reservas">Reservas</a>
+        <a href="#local" data-i18n="nav.local">Local</a>
+        <a href="#" data-open-cart data-i18n="footer.order">Pedir</a>
       </nav>
       <p class="footer-legal">
         © <span id="year"></span> Kusikuy Dark Kitchen · A&amp;S Grupo Empresarial<br />
-        Hecho con 🔥 para los amantes de las alitas.
+        <span data-i18n="footer.made">Hecho con 🔥 para los amantes de las alitas.</span>
       </p>
     </div>
   </footer>
@@ -217,20 +222,20 @@
   <div class="cart-overlay" id="cartOverlay" hidden></div>
   <aside class="cart-panel" id="cartPanel" aria-label="Tu pedido" aria-hidden="true">
     <header class="cart-head">
-      <h3>Tu pedido 🛒</h3>
+      <h3 data-i18n="cart.title">Tu pedido 🛒</h3>
       <button class="cart-close" id="cartClose" aria-label="Cerrar">✕</button>
     </header>
     <div class="cart-body" id="cartBody">
-      <p class="cart-empty" id="cartEmpty">Tu pedido está vacío. Agrega algo del menú 🔥</p>
+      <p class="cart-empty" id="cartEmpty" data-i18n="cart.empty">Tu pedido está vacío. Agrega algo del menú 🔥</p>
       <ul class="cart-items" id="cartItems"></ul>
     </div>
     <footer class="cart-foot">
       <div class="cart-total" id="cartTotal" hidden>
-        <span>Total</span>
+        <span data-i18n="cart.total">Total</span>
         <strong id="cartTotalValue">S/ 0.00</strong>
       </div>
-      <p class="cart-hint" id="cartHint">Confirmamos el total contigo por WhatsApp.</p>
-      <button class="btn btn-whatsapp btn-block" id="cartSend" disabled>Enviar pedido por WhatsApp</button>
+      <p class="cart-hint" id="cartHint" data-i18n="cart.hint">Confirmamos el total contigo por WhatsApp.</p>
+      <button class="btn btn-whatsapp btn-block" id="cartSend" disabled data-i18n="cart.send">Enviar pedido por WhatsApp</button>
     </footer>
   </aside>
 
